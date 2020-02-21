@@ -56,4 +56,6 @@ Plug 'lervag/vimtex'
 " Markdown
 " Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+" Distraction free writing
+Plug 'junegunn/goyo.vim'
 call plug#end()
