@@ -13,6 +13,7 @@ nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap <Leader>' :Marks<CR>
 nmap <Leader>C :Commands<CR>
+nmap <Leader>R :Rg<CR>
 " Toggle Dirvish
 map <C-n> :Dirvish<CR>
 inoremap jk <Esc>
