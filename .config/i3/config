@@ -14,15 +14,15 @@ bindsym $mod+n border normal
 
 floating_modifier $mod
 
-bindsym $mod+t exec kitty 
+bindsym $mod+t exec alacritty
 
 # Window kill command
 bindsym $mod+Shift+q kill
 
 # start program launcher
-# bindsym $mod+d exec --no-startup-id rofi -show drun -modi drun -show-icons -theme sidebar -drun-icon-theme "Papirus" -font "Roboto Mono 10"
+bindsym $mod+d exec --no-startup-id rofi -show drun -modi drun -show-icons -theme sidebar -drun-icon-theme "Papirus" -font "Roboto Mono 10"
 # bindsym $mod+d exec xfce4-popup-whiskermenu
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/appsmenu.sh
+# bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/appsmenu.sh
 # Custom
 bindsym $mod+i exec termite --class ranger -e ranger 
 bindsym $mod+z exec emacs ~/org/
