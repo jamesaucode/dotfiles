@@ -5,7 +5,7 @@ font:
     bold:
         family: Fira Mono
         style: Medium
-    size: 8.5
+    size: 12
 # Base16 Material Palenight 256 - alacritty color config
 # Nate Peterson
 colors:

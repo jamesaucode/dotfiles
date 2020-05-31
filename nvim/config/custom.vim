@@ -43,5 +43,6 @@ tnoremap :q! <C-\><C-n>:q!<CR>
 
 augroup c_cpp_files
 	autocmd!
-	autocmd! FileType c,cpp :setlocal tabstop=8 softtabstop=8 shiftwidth=8
+	autocmd! FileType c :setlocal tabstop=8 softtabstop=8 shiftwidth=8
+	autocmd! FileType cpp :setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END

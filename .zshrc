@@ -15,7 +15,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -124,7 +124,7 @@ export KEYTIMEOUT=1
 
 # Addes vi mode indicator in terminal
 function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS1="${${KEYMAP/vicmd/ [NORMAL] }/(main|viins)/ [INSERT] }"
     RPS2=$RPS1
     zle reset-prompt
 }
@@ -139,6 +139,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 	[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
+
+export DENO_INSTALL="/home/james/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
