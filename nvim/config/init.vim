@@ -14,12 +14,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' "Fuzzy search!
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP client for neovim
-if executable('yarn')
-	Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-endif
 Plug 'prettier/vim-prettier', {
 			\ 'do': 'yarn install',
 			\ 'branch': 'release/1.x',
