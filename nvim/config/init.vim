@@ -49,10 +49,10 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 " Latex
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 " Markdown
 " Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 call plug#end()
