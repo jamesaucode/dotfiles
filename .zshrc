@@ -107,6 +107,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias e="emacsclient -nw -a ''"
 alias fterm="kitty --class __scratchpad_term --detach"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # Dracula theme fzf
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
