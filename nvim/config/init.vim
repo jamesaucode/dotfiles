@@ -39,6 +39,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'justinmk/vim-dirvish' "minimal file explorer
+Plug 'christoomey/vim-tmux-navigator'
 "C / C++ syntax highlight
 Plug 'arakashic/chromatica.nvim'
 Plug 'justinmk/vim-syntax-extra' "more sensible c highlight

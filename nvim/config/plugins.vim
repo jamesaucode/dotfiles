@@ -32,5 +32,8 @@ autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
 "
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tsx,*.jsx'
 
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
+
 " Unset background color for transparency
 hi! Normal ctermbg=NONE guibg=NONE
