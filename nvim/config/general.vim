@@ -29,6 +29,7 @@ set showcmd " show command in bottom bar
 set wildmenu
 " As much as possible of the last line in a window will be displayed
 set display+=lastline
+set backupcopy=yes
 " Show spaces, tabs and new lines as characters
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+

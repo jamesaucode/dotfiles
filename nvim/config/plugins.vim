@@ -27,5 +27,10 @@ augroup END
 " Hacky way to close fzf window in nvim
 autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
 
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tsx,*.jsx'
+
 " Unset background color for transparency
 hi! Normal ctermbg=NONE guibg=NONE

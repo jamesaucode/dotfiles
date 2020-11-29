@@ -7,7 +7,8 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'alvan/vim-closetag'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
