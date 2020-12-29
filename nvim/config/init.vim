@@ -38,8 +38,10 @@ Plug 'tpope/vim-commentary' "gcc for commenting code
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
-Plug 'justinmk/vim-dirvish' "minimal file explorer
 Plug 'christoomey/vim-tmux-navigator'
+"File Browser
+Plug 'lambdalisue/fern.vim'
+Plug 'antoinemadec/FixCursorHold.nvim'
 "C / C++ syntax highlight
 Plug 'arakashic/chromatica.nvim'
 Plug 'justinmk/vim-syntax-extra' "more sensible c highlight
