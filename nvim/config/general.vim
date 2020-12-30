@@ -1,9 +1,9 @@
 set hidden
 set tags=tags
 " Default tab size to 4
-set tabstop=4
-set softtabstop=4 noexpandtab
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2 noexpandtab
+set shiftwidth=2
 set shortmess+=c " Hide ins-completion
 set scrolloff=5 " always show at least 5 lines below
 set number
@@ -53,3 +53,6 @@ endif
 let g:sessions_dir = '~/vim-sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+
+" Unset background color for transparency
+" hi! Normal ctermbg=NONE guibg=NONE

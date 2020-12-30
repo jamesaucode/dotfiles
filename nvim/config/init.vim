@@ -41,6 +41,11 @@ Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'christoomey/vim-tmux-navigator'
 "File Browser
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 "C / C++ syntax highlight
 Plug 'arakashic/chromatica.nvim'
@@ -52,6 +57,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 " UI
 Plug 'itchyny/lightline.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'senran101604/neotrix.vim'
+Plug 'romainl/Apprentice'
 " Latex
 "Plug 'lervag/vimtex'
 " Markdown
