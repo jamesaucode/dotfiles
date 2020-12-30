@@ -10,9 +10,14 @@ let g:lightline = {
 			\ }
 let g:go_auto_type_info = 1
 
-set background=dark
-colorscheme palenight
+" Colorscheme stuff
+" set background=dark
+" colorscheme palenight
+" colorscheme neotrix
+colorscheme apprentice
+set termguicolors
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 
@@ -35,5 +40,5 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tsx,*.jsx'
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
 
-" Unset background color for transparency
-hi! Normal ctermbg=NONE guibg=NONE
+let g:fern#renderer = "nerdfont"
+let g:neotrix_dark_contrast = "retro"
