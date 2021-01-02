@@ -3,6 +3,8 @@ set tags=tags
 " Default tab size to 4
 set tabstop=2
 set softtabstop=2 noexpandtab
+" Make + yank to clipboard on linux
+set clipboard=unnamedplus
 set shiftwidth=2
 set shortmess+=c " Hide ins-completion
 set scrolloff=5 " always show at least 5 lines below

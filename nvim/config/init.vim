@@ -8,13 +8,13 @@ endif
 call plug#begin('~/.vim/plugged')
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'alvan/vim-closetag'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' "Fuzzy search!
 Plug 'mattn/emmet-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP client for neovim
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP client for neovim
 Plug 'prettier/vim-prettier', {
 			\ 'do': 'yarn install',
 			\ 'branch': 'release/1.x',
@@ -48,16 +48,17 @@ Plug 'lambdalisue/fern-hijack.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 "C / C++ syntax highlight
-Plug 'arakashic/chromatica.nvim'
-Plug 'justinmk/vim-syntax-extra' "more sensible c highlight
+" Plug 'arakashic/chromatica.nvim'
+" Plug 'justinmk/vim-syntax-extra' "more sensible c highlight
 " Javascript / Typescript related
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim'
 " UI
 Plug 'itchyny/lightline.vim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'senran101604/neotrix.vim'
 Plug 'romainl/Apprentice'
 " Latex
 "Plug 'lervag/vimtex'
@@ -66,4 +67,13 @@ Plug 'romainl/Apprentice'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
+" Neovim LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'RishabhRD/popfix'
+Plug 'RishabhRD/nvim-lsputils'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/completion-treesitter'
 call plug#end()
+

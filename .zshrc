@@ -109,6 +109,7 @@ alias vim="nvim"
 alias e="emacsclient -nw -a ''"
 alias fterm="kitty --class __scratchpad_term --detach"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias r='ranger'
 
 # Dracula theme fzf
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -153,3 +154,11 @@ export VISUAL="nvim"
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t base || tmux new -s base 
 fi
+export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
