@@ -1,9 +1,9 @@
 font:
     normal:
-        family: Fira Mono
+        family: FiraCode Nerd Font
         style: Regular
     bold:
-        family: Fira Mono
+        family: FiraCode Nerd Font
         style: Medium
     size: 8
 # Base16 Material Palenight 256 - alacritty color config

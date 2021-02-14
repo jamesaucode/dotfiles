@@ -14,7 +14,7 @@ Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' "Fuzzy search!
 Plug 'mattn/emmet-vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP client for neovim
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP client for neovim
 Plug 'prettier/vim-prettier', {
 			\ 'do': 'yarn install',
 			\ 'branch': 'release/1.x',
@@ -67,13 +67,5 @@ Plug 'romainl/Apprentice'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
-" Neovim LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'RishabhRD/popfix'
-Plug 'RishabhRD/nvim-lsputils'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/completion-treesitter'
 call plug#end()
 
