@@ -20,10 +20,7 @@ bindsym $mod+t exec alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-#bindsym $mod+d exec --no-startup-id rofi -show drun -modi drun -show-icons -theme sidebar -drun-icon-theme "Papirus" -font "Roboto 14"
-bindsym $mod+d exec --no-startup-id ~/.config/polybar/scripts/menu
-# bindsym $mod+d exec xfce4-popup-whiskermenu
-# bindsym $mod+d exec --no-startup-id ~/.config/rofi/scripts/appsmenu.sh
+bindsym $mod+d exec --no-startup-id ~/.config/polybar/forest/scripts/launcher.sh
 # Custom
 bindsym $mod+i exec termite --class ranger -e ranger 
 bindsym $mod+z exec emacs ~/org/
@@ -287,13 +284,13 @@ bindsym $mod+Ctrl+j resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+h resize grow width 10 px or 10 ppt
 
 # set power-manager and volume control
-exec --no-startup-id mate-power-manager
+# exec --no-startup-id mate-power-manager
 
-# Swap capslock and escape
-exec --no-startup-id setxkbmap -option caps:swapescape
+# Make capslock another escape
+exec --no-startup-id setxkbmap -option caps:escape
 
 # Starts polybar
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/forest/launch.sh
 
 # Make a terminal to the scratchpad
 for_window [class="__scratchpad_term"] move scratchpad
@@ -302,8 +299,8 @@ bindsym $mod+m [class="__scratchpad_term"] scratchpad show
 for_window[class="Spotify"] move scratchpad
 bindsym $mod+c [class="Spotify"] scratchpad show
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 -q set Master 2db- unmute
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set 'Master' 10%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set 'Master' 10%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
 # touchpad on and off controller on laptop with Fn+<touchpad control functional key>
@@ -311,8 +308,8 @@ bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
 # Brightness Control
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl -d amdgpu_bl0 s +10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl -d amdgpu_bl0 s 10- # decrease screen brightness
 client.focused #d70a53 #d70a53 #ffffff #8c0333
 client.focused_inactive #333333 #333333 #888888 #333333
 client.unfocused #333333 #333333 #888888 #333333
