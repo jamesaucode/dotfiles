@@ -48,6 +48,8 @@
 (setq org-log-done 'time)
 (setq org-agenda-start-with-log-mode t)
 
+;; Disables evil mode in terminal
+(add-hook 'term-mode-hook 'evil-emacs-state)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
