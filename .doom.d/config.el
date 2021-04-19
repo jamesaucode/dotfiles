@@ -1,9 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "James Au"
@@ -24,18 +20,13 @@
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 16 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 17))
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-palenight)
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
+;; Always use ~/org just to be consistent, symlink it to ~/org if it's somewhere else
 (setq org-directory "~/org")
 (setq org-default-notes-file (concat org-directory "/captured.org"))
 
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
+;; Relative line numbers for easier navigation with evil
 (setq display-line-numbers-type 'relative)
 
 ;; Faster autocomplete
@@ -43,9 +34,6 @@
 (setq company-idle-delay 0)
 ;; VS-code like tab completion behavior
 (company-tng-configure-default)
-;; Vim like keybinding for navigating through hunks
-(map! :desc "Next hunk" :nv "SPC g j" #'git-gutter:next-hunk)
-(map! :desc "Previous hunk" :nv "SPC g k" #'git-gutter:previous-hunk)
 
 ;; Adds time log when tasks are set to DONE
 (setq org-log-done 'time)
@@ -57,6 +45,10 @@
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
+
+;; Vim like keybinding for navigating through hunks
+(map! :desc "Next hunk" :nv "SPC g j" #'git-gutter:next-hunk)
+(map! :desc "Previous hunk" :nv "SPC g k" #'git-gutter:previous-hunk)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
