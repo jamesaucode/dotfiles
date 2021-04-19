@@ -27,7 +27,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-miramare)
+(setq doom-theme 'doom-palenight)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -43,6 +43,9 @@
 (setq company-idle-delay 0)
 ;; VS-code like tab completion behavior
 (company-tng-configure-default)
+;; Vim like keybinding for navigating through hunks
+(map! :desc "Next hunk" :nv "SPC g j" #'git-gutter:next-hunk)
+(map! :desc "Previous hunk" :nv "SPC g k" #'git-gutter:previous-hunk)
 
 ;; Adds time log when tasks are set to DONE
 (setq org-log-done 'time)
@@ -50,6 +53,10 @@
 
 ;; Disables evil mode in terminal
 (add-hook 'term-mode-hook 'evil-emacs-state)
+;; Auto run prettier on save for JS and TS files
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
