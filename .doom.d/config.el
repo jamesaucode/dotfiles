@@ -20,7 +20,7 @@
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 16 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 17))
 
-(setq doom-theme 'doom-palenight)
+(setq doom-theme 'doom-acario-dark)
 
 ;; Always use ~/org just to be consistent, symlink it to ~/org if it's somewhere else
 (setq org-directory "~/org")
@@ -31,7 +31,8 @@
 
 ;; Faster autocomplete
 (setq company-dabbrev-downcase 0)
-(setq company-idle-delay 0)
+(setq company-idle-delay 0.05)
+(setq gc-cons-threshold 10000000)
 ;; VS-code like tab completion behavior
 (company-tng-configure-default)
 
@@ -39,12 +40,20 @@
 (setq org-log-done 'time)
 (setq org-agenda-start-with-log-mode t)
 
-;; Disables evil mode in terminal
-(add-hook 'term-mode-hook 'evil-emacs-state)
 ;; Auto run prettier on save for JS and TS files
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
+;; Some performance enhancement for magit
+(setq magit-git-executable "/usr/local/bin/git")
+(setq vc-handled-backends nil)
+(setq vc-handled-backends (delq 'Git vc-handled-backends))
+(setq magit-auto-revert-mode nil)
+(setq global-auto-revert-mode nil)
+
+;; Transparent background
+(set-frame-parameter (selected-frame) 'alpha '(92 . 90))
+(add-to-list 'default-frame-alist '(alpha . (92 . 90)))
 
 ;; Vim like keybinding for navigating through hunks
 (map! :desc "Next hunk" :nv "SPC g j" #'git-gutter:next-hunk)
