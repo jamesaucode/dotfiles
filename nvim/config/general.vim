@@ -1,5 +1,6 @@
 set hidden
 set tags=tags
+set completeopt=menuone,noselect
 " Default tab size to 4
 set tabstop=2
 set softtabstop=2 noexpandtab
