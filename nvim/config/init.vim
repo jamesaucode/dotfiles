@@ -11,11 +11,13 @@ Plug 'alvan/vim-closetag'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'hrsh7th/nvim-compe'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim' "Fuzzy search
 Plug 'mattn/emmet-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP client for neovim
 Plug 'prettier/vim-prettier', {
 			\ 'do': 'yarn install',
 			\ 'branch': 'release/1.x',
@@ -38,7 +40,6 @@ Plug 'prettier/vim-prettier', {
 Plug 'tpope/vim-commentary' "gcc for commenting code
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-"Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'christoomey/vim-tmux-navigator'
 "File Browser
@@ -49,9 +50,6 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-hijack.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
-"C / C++ syntax highlight
-" Plug 'arakashic/chromatica.nvim'
-" Plug 'justinmk/vim-syntax-extra' "more sensible c highlight
 " Javascript / Typescript related
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -63,8 +61,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'romainl/Apprentice'
 Plug 'chriskempson/base16-vim'
-" Latex
-"Plug 'lervag/vimtex'
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 call plug#end()

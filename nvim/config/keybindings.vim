@@ -1,9 +1,6 @@
-nmap <silent> gd <Plug>(coc-definition)
 nnoremap  <Leader>n: bn<CR>
 nnoremap  <Leader>p: bp<CR>
 nnoremap  <Leader>d: bd<CR>
-" VSCode like lsp rename
-nmap <F2> <Plug>(coc-rename)
 " Fuzzy find keybindings
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
@@ -15,46 +12,55 @@ nmap <Leader>' :Marks<CR>
 nmap <Leader>C :Commands<CR>
 nmap <Leader>R :Rg<CR>
 nmap <nowait><Leader>o :Fern . -drawer<CR>
-" Lua completion
-" imap <tab> <Plug>(completion_smart_tab)
-" imap <s-tab> <Plug>(completion_smart_s_tab)
-" nvim LSP
-" nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-" nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-" nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-" nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-" nnoremap <silent> gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-" nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-" nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-" nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-" nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-" nnoremap <silent> <C-M> <cmd>lua vim.lsp.buf.code_action()<CR>
 
-" inoremap jk <Esc>
-" Tab completion like VSCode
-inoremap <silent><expr> <TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ <SID>check_back_space() ? "\<TAB>" :
-			\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position.  Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" LSP UI keybindings
+nmap <F2> :Lspsaga rename<CR>
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent>gd <Cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent>gD :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>ca :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 
-function! s:show_documentation()
-	if &filetype == 'vim'
-		execute 'h '.expand('<cword>')
-	else
-		call CocAction('doHover')
-	endif
-endfunction
+lua << EOF
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
-nnoremap <silent> K : call <SID>show_documentation()<CR>
-let g:coc_snippet_next = '<TAB>'
-let g:coc_snippet_prev = '<S-TAB>'
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        return true
+    else
+        return false
+    end
+end
 
-function s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+-- Use (s-)tab to:
+--- move to prev/next item in completion menuone
+--- jump to prev/next snippet's placeholder
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-n>"
+  elseif vim.fn.call("vsnip#available", {1}) == 1 then
+    return t "<Plug>(vsnip-expand-or-jump)"
+  elseif check_back_space() then
+    return t "<Tab>"
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-p>"
+  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
+  else
+    return t "<S-Tab>"
+  end
+end
 
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+EOF
