@@ -1,9 +1,9 @@
-" nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition)
 nnoremap  <Leader>n: bn<CR>
 nnoremap  <Leader>p: bp<CR>
 nnoremap  <Leader>d: bd<CR>
 " VSCode like lsp rename
-" nmap <F2> <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
 " Fuzzy find keybindings
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
@@ -14,7 +14,7 @@ nmap <Leader>L :Lines<CR>
 nmap <Leader>' :Marks<CR>
 nmap <Leader>C :Commands<CR>
 nmap <Leader>R :Rg<CR>
-nmap <Leader>o :Fern . -drawer<CR>
+nmap <nowait><Leader>o :Fern . -drawer<CR>
 " Lua completion
 " imap <tab> <Plug>(completion_smart_tab)
 " imap <s-tab> <Plug>(completion_smart_s_tab)

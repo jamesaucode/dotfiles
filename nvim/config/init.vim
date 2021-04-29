@@ -1,7 +1,7 @@
 " auto-install vim-plug if it doesn't exist
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs 
-	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -11,8 +11,9 @@ Plug 'alvan/vim-closetag'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim' "Fuzzy search!
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim' "Fuzzy search
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP client for neovim
 Plug 'prettier/vim-prettier', {
@@ -35,8 +36,9 @@ Plug 'prettier/vim-prettier', {
 			\ 'html',
 			\ 'swift' ] }
 Plug 'tpope/vim-commentary' "gcc for commenting code
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'christoomey/vim-tmux-navigator'
 "File Browser
@@ -51,7 +53,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 " Plug 'arakashic/chromatica.nvim'
 " Plug 'justinmk/vim-syntax-extra' "more sensible c highlight
 " Javascript / Typescript related
-" Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim'
 " UI
@@ -60,11 +62,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'romainl/Apprentice'
+Plug 'chriskempson/base16-vim'
 " Latex
 "Plug 'lervag/vimtex'
-" Markdown
-" Plug 'plasticboy/vim-markdown'
-"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 call plug#end()
