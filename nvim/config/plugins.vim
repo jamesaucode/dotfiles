@@ -1,10 +1,4 @@
-" " Use <Tab> and <S-Tab> to navigate through popup menu
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" Set completeopt to have a better completion experience
-" set completeopt=menuone,noinsert,noselect
 lua << EOF
-require'lspconfig'.tsserver.setup{}
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
 require'nvim-treesitter.configs'.setup {
@@ -15,7 +9,25 @@ require'nvim-treesitter.configs'.setup {
     disable = {},  -- list of language that will be disabled
   },
 }
+
+-- built-in theme
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+local lspconfig = require'lspconfig'
+
+lspconfig.tsserver.setup({
+	on_attach = lsp_status.on_attach,
+	capabilities = lsp_status.capabilities,
+})
 EOF
+
+function! LspStatus() abort
+    if luaeval('#vim.lsp.buf_get_clients() > 0')
+        return luaeval("require('lsp-status').status()")
+    endif
+
+    return ''
+endfunction
 
 let g:compe = {}
 let g:compe.enabled = v:true
@@ -42,36 +54,25 @@ let g:compe.source.vsnip = v:true
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-let g:completion_matching_smart_case = 1
-let g:completion_trigger_on_delete = 1
-let g:completion_enable_auto_popup = 1
-let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
-
-let g:completion_timer_cycle = 200 "default value is 80
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 let g:lightline = {
-			\ 'colorscheme': 'jellybeans',
+			\ 'colorscheme': 'deepspace',
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ],
-			\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+			\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
 			\ },
 			\ 'component_function': {
-			\   'gitbranch': 'FugitiveHead'
+			\   'gitbranch': 'FugitiveHead',
 			\ },
 			\ }
 
 " Colorscheme stuff
-colorscheme base16-outrun-dark
+set background=dark
 set termguicolors
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
+colorscheme deep-space
+let g:deepspace_italics=1
 
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 
 " Make fzf window float with 90vw + 60vh
 let g:fzf_layout = { 'window': { 'width' : 0.9, 'height': 0.6 } }

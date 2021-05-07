@@ -50,14 +50,14 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-hijack.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
-" Javascript / Typescript related
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'HerringtonDarkholme/yats.vim'
+" Generates Code doc
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " UI
 Plug 'itchyny/lightline.vim'
-" If you want to have icons in your statusline choose one of these
+" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'nvim-lua/lsp-status.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'romainl/Apprentice'
 Plug 'chriskempson/base16-vim'

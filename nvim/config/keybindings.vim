@@ -13,6 +13,12 @@ nmap <Leader>C :Commands<CR>
 nmap <Leader>R :Rg<CR>
 nmap <nowait><Leader>o :Fern . -drawer<CR>
 
+" Easier window navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " LSP UI keybindings
 nmap <F2> :Lspsaga rename<CR>
 nnoremap <silent>K :Lspsaga hover_doc<CR>
@@ -20,6 +26,11 @@ nnoremap <silent>gd <Cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent>gD :Lspsaga preview_definition<CR>
 nnoremap <silent><leader>ca :Lspsaga code_action<CR>
 vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent><leader>dj :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent><leader>dk :Lspsaga diagnostic_jump_prev<CR>
+
+" Fugitive
+nnoremap <silent><leader>gg :Git<CR>
 
 lua << EOF
 local t = function(str)
@@ -41,8 +52,6 @@ end
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
-  elseif vim.fn.call("vsnip#available", {1}) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
   elseif check_back_space() then
     return t "<Tab>"
   else
@@ -52,8 +61,6 @@ end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-p>"
-  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
   else
     return t "<S-Tab>"
   end
