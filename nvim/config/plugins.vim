@@ -70,6 +70,9 @@ set background=dark
 set termguicolors
 colorscheme deep-space
 let g:deepspace_italics=1
+" Unset background color for transparency
+highlight Normal guibg=none
+highlight NonText guibg=none
 
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync

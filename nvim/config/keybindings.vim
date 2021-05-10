@@ -2,7 +2,7 @@ nnoremap  <Leader>n: bn<CR>
 nnoremap  <Leader>p: bp<CR>
 nnoremap  <Leader>d: bd<CR>
 " Fuzzy find keybindings
-nmap <Leader>b :Buffers<CR>
+nmap <Leader>B :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
 nmap <Leader>F :Files<CR>
 nmap <Leader>h :History<CR>
@@ -18,6 +18,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+nnoremap <leader>b[ :bprevious<CR>
+nnoremap <leader>b] :bnext<CR>
 
 " LSP UI keybindings
 nmap <F2> :Lspsaga rename<CR>
