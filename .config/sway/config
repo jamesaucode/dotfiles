@@ -1,17 +1,11 @@
 set $mod Mod4
 
-# new_window pixel 3
-# new_float normal
-
-
 # hide_edge_borders none
 set $term alacritty
 
 bindsym $mod+u border none
 bindsym $mod+y border pixel 3
 bindsym $mod+n border normal
-
-# font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
@@ -47,14 +41,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# workspace back and forth (with/without active container)
-# workspace_auto_back_and_forth yes
-# bindsym $mod+b workspace back_and_forth
-# bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-
 # split orientation
-# bindsym $mod+h split h;exec notify-send 'tile horizontally'
-# bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -67,9 +54,6 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -214,25 +198,12 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-
-# Theme colors
-# client.focused #b0b287 #1d1e26 #b0b287 #789073 #789073
-# client.focused_inactive #b0b287 #1d1e26 #b0b287 #789073 #789073
-# client.unfocused #b0b287 #1d1e26 #b0b287 #789073 #789073
-# client.urgent #b0b287 #1d1e26 #b0b287 #789073 #789073
-# client.placeholder #b0b287 #1d1e26 #b0b287 #789073 #789073
-# 
-# client.background #1d1e26
-# client.background #000000
-# client.focused #000000 #000000 #000000 #000000 #000000 
 
 # Gaps
 gaps inner 15
@@ -283,18 +254,14 @@ bindsym $mod+Ctrl+k resize grow height 10 px or 10 ppt
 bindsym $mod+Ctrl+j resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+h resize grow width 10 px or 10 ppt
 
-# set power-manager and volume control
-# exec --no-startup-id mate-power-manager
-
 # Make capslock another escape
 exec --no-startup-id setxkbmap -option caps:escape
 
-# Starts polybar
-# exec --no-startup-id ~/.config/polybar/forest/launch.sh
+exec --no-startup-id dunst
 
 # Make a terminal to the scratchpad
 for_window [class="__scratchpad_term"] move scratchpad
-exec --no-startup-id kitty --class __scratchpad_term
+exec --no-startup-id alacritty --class __scratchpad_term
 bindsym $mod+m [class="__scratchpad_term"] scratchpad show
 for_window [class="Spotify"] move scratchpad
 bindsym $mod+c [class="Spotify"] scratchpad show
@@ -318,16 +285,16 @@ client.unfocused #333333 #333333 #888888 #333333
 client.urgent #eb709b #eb709b #ffffff #eb709b
 
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+	swaybar_command waybar
 }
 
+input 1267:12596:ASUE140A:00_04F3:3134_Touchpad {
+	tap enabled
+}
+
+input "type:keyboard" {
+	xkb_options caps:escape
+}
+
+# Wallpaper for sway
+output "*" bg /home/jamesau/Downloads/wp1.jpg fill
