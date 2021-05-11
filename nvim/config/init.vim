@@ -41,6 +41,7 @@ Plug 'tpope/vim-commentary' "gcc for commenting code
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
+Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
 "File Browser
 Plug 'lambdalisue/fern.vim'

@@ -19,6 +19,13 @@ lspconfig.tsserver.setup({
 	on_attach = lsp_status.on_attach,
 	capabilities = lsp_status.capabilities,
 })
+
+require'nvim-treesitter.configs'.setup {
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
+    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
+  },
+}
 EOF
 
 function! LspStatus() abort
