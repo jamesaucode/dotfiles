@@ -26,6 +26,9 @@ require'nvim-treesitter.configs'.setup {
     disable = { "c", "ruby" },  -- optional, list of language that will be disabled
   },
 }
+
+require('gitsigns').setup()
+
 EOF
 
 function! LspStatus() abort

@@ -38,12 +38,14 @@ Plug 'prettier/vim-prettier', {
 			\ 'html',
 			\ 'swift' ] }
 Plug 'tpope/vim-commentary' "gcc for commenting code
-Plug 'mhinz/vim-signify'
+Plug 'nvim-lua/plenary.nvim'
+" Depends on plenary
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
-"File Browser
+" File Browser
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
