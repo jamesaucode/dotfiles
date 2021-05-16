@@ -12,8 +12,11 @@ Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'hrsh7th/nvim-compe'
+" LSP stuff
 Plug 'glepnir/lspsaga.nvim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'folke/lsp-colors.nvim'
+Plug 'folke/trouble.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim' "Fuzzy search
