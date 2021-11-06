@@ -110,6 +110,7 @@ alias e="emacsclient -nw -a ''"
 alias fterm="kitty --class __scratchpad_term --detach"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias r='ranger'
+alias ff='firefox'
 
 # Dracula theme fzf
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -157,3 +158,5 @@ fi
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

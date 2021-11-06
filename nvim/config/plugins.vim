@@ -28,6 +28,22 @@ require("lsp-colors").setup({
   Information = "#0db9d7",
   Hint = "#10B981"
 })
+lspconfig.pyright.setup{}
+lspconfig.rust_analyzer.setup{}
+
+require'nvim-treesitter.configs'.setup {
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
+    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
+  },
+}
+
+require('gitsigns').setup()
+require("trouble").setup {
+-- your configuration comes here
+-- or leave it empty to use the default settings
+-- refer to the configuration section below
+}
 EOF
 
 function! LspStatus() abort
@@ -78,16 +94,10 @@ let g:lightline = {
 			\ }
 
 " Colorscheme stuff
-" set background=dark
-" set termguicolors
 colorscheme base16-unikitty-light
 let g:deepspace_italics=1
-" Unset background color for transparency
-" highlight Normal guibg=none
-" highlight NonText guibg=none
-
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
+set termguicolors
+colorscheme base16-unikitty-light
 
 " Make fzf window float with 90vw + 60vh
 let g:fzf_layout = { 'window': { 'width' : 0.9, 'height': 0.6 } }

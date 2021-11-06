@@ -17,8 +17,8 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 18 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "Iosevka Nerd Font" :size 20))
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 18 :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 20))
 
 (setq doom-theme 'doom-tomorrow-night)
 
@@ -46,7 +46,7 @@
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'org-mode-hook 'writeroom-mode)
 ;; Some performance enhancement for magit
-(setq magit-git-executable "/usr/local/bin/git")
+;; (setq magit-git-executable "/usr/local/bin/git")
 (setq vc-handled-backends nil)
 (setq vc-handled-backends (delq 'Git vc-handled-backends))
 (setq magit-auto-revert-mode nil)
