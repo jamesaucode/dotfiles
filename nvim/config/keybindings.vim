@@ -2,7 +2,7 @@ nnoremap  <Leader>n: bn<CR>
 nnoremap  <Leader>p: bp<CR>
 nnoremap  <Leader>d: bd<CR>
 " Fuzzy find keybindings
-nmap <Leader>B :Buffers<CR>
+nmap <nowait><Leader>b :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
 nmap <Leader>F :Files<CR>
 nmap <Leader>h :History<CR>
@@ -13,22 +13,29 @@ nmap <Leader>C :Commands<CR>
 nmap <Leader>R :Rg<CR>
 nmap <nowait><Leader>o :Fern . -drawer<CR>
 
+let g:nnn#set_default_mappings = 0
+nnoremap <nowait><leader>N :NnnPicker<CR>
+nnoremap <nowait><leader>n :NnnPicker %:p:h<CR>
+
 " Easier window navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <leader>b[ :bprevious<CR>
-nnoremap <leader>b] :bnext<CR>
+" nnoremap <leader>b[ :bprevious<CR>
+" nnoremap <leader>b] :bnext<CR>
 
 " LSP UI keybindings
 nmap <F2> :Lspsaga rename<CR>
 nnoremap <silent>K :Lspsaga hover_doc<CR>
-nnoremap <silent>gd <Cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent>gD :Lspsaga preview_definition<CR>
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
+" nnoremap <silent>gd <Cmd>lua vim.lsp.buf.definition()<CR>
+" nnoremap <silent>gD :Lspsaga preview_definition<CR>
+nnoremap <silent>gd :Telescope lsp_implementations<CR>
+nnoremap <silent>gD :Telescope lsp_definitions<CR>
+nnoremap <silent><leader>ca :Telescope lsp_code_actions<CR>
+nnoremap <silent><leader>dd :Telescope lsp_document_diagnostics<CR>
+nnoremap <silent><leader>dD :Telescope lsp_workspace_diagnostics<CR>
 nnoremap <silent><leader>dj :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent><leader>dk :Lspsaga diagnostic_jump_prev<CR>
 

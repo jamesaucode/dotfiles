@@ -7,16 +7,14 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Plugin outside ~/.vim/plugged with post-update hook
+Plug 'mcchrish/nnn.vim'
 Plug 'alvan/vim-closetag'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'hrsh7th/nvim-compe'
-" LSP stuff
 Plug 'glepnir/lspsaga.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'folke/lsp-colors.nvim'
-Plug 'folke/trouble.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim' "Fuzzy search
@@ -41,14 +39,14 @@ Plug 'prettier/vim-prettier', {
 			\ 'html',
 			\ 'swift' ] }
 Plug 'tpope/vim-commentary' "gcc for commenting code
-Plug 'nvim-lua/plenary.nvim'
-" Depends on plenary
-Plug 'lewis6991/gitsigns.nvim'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
-Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
-" File Browser
+"File Browser
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
@@ -56,9 +54,12 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-hijack.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 " Generates Code doc
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " UI
+Plug 'folke/lsp-colors.nvim'
 Plug 'itchyny/lightline.vim'
 " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/lsp-status.nvim'
