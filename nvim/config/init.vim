@@ -7,8 +7,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " Plugin outside ~/.vim/plugged with post-update hook
+Plug 'mcchrish/nnn.vim'
 Plug 'alvan/vim-closetag'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'hrsh7th/nvim-compe'
@@ -40,6 +41,9 @@ Plug 'prettier/vim-prettier', {
 Plug 'tpope/vim-commentary' "gcc for commenting code
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'christoomey/vim-tmux-navigator'
 "File Browser
@@ -50,9 +54,12 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-hijack.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 " Generates Code doc
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " UI
+Plug 'folke/lsp-colors.nvim'
 Plug 'itchyny/lightline.vim'
 " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/lsp-status.nvim'

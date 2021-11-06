@@ -15,9 +15,18 @@ local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 local lspconfig = require'lspconfig'
 
+lspconfig.gopls.setup{}
+
 lspconfig.tsserver.setup({
 	on_attach = lsp_status.on_attach,
 	capabilities = lsp_status.capabilities,
+	filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" }
+})
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
 })
 EOF
 
@@ -28,6 +37,9 @@ function! LspStatus() abort
 
     return ''
 endfunction
+
+" Floating window (neovim latest and vim with patch 8.2.191)
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
 let g:compe = {}
 let g:compe.enabled = v:true
@@ -55,7 +67,7 @@ let g:compe.source.vsnip = v:true
 set shortmess+=c
 
 let g:lightline = {
-			\ 'colorscheme': 'deepspace',
+			\ 'colorscheme': 'PaperColor_light',
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ],
 			\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -66,13 +78,13 @@ let g:lightline = {
 			\ }
 
 " Colorscheme stuff
-set background=dark
-set termguicolors
-colorscheme deep-space
+" set background=dark
+" set termguicolors
+colorscheme base16-unikitty-light
 let g:deepspace_italics=1
 " Unset background color for transparency
-highlight Normal guibg=none
-highlight NonText guibg=none
+" highlight Normal guibg=none
+" highlight NonText guibg=none
 
 " let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
@@ -97,3 +109,6 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tsx,*.jsx'
 let g:tmux_navigator_disable_when_zoomed = 1
 
 let g:fern#renderer = "nerdfont"
+
+" use the same n³ session within a vim session
+let g:nnn#session = 'local'

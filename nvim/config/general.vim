@@ -12,7 +12,8 @@ set scrolloff=5 " always show at least 5 lines below
 set number
 set relativenumber
 set updatetime=100
-set colorcolumn=80 " Set a ruler at the 80th character column
+set colorcolumn=120 " Set a ruler at the 80th character column
+set textwidth=120
 set noshowmode
 set foldmethod=indent " Fold based on syntax
 set foldnestmax=10
