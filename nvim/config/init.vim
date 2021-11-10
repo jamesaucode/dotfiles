@@ -10,7 +10,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'mcchrish/nnn.vim'
 Plug 'alvan/vim-closetag'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-ts-autotag'
+Plug 'windwp/nvim-autopairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'hrsh7th/nvim-compe'
 Plug 'glepnir/lspsaga.nvim'

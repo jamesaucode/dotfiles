@@ -23,12 +23,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" nnoremap <leader>b[ :bprevious<CR>
-" nnoremap <leader>b] :bnext<CR>
-
 " LSP UI keybindings
 nmap <F2> :Lspsaga rename<CR>
-nnoremap <silent>K :Lspsaga hover_doc<CR>
+" nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent>K :lua vim.lsp.buf.hover()<CR>
 " nnoremap <silent>gd <Cmd>lua vim.lsp.buf.definition()<CR>
 " nnoremap <silent>gD :Lspsaga preview_definition<CR>
 nnoremap <silent>gd :Telescope lsp_implementations<CR>

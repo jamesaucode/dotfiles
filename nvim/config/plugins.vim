@@ -28,6 +28,12 @@ require("lsp-colors").setup({
   Information = "#0db9d7",
   Hint = "#10B981"
 })
+require('nvim-autopairs').setup{}
+require'nvim-treesitter.configs'.setup {
+  autotag = {
+    enable = true,
+  }
+}
 EOF
 
 function! LspStatus() abort
