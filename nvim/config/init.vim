@@ -43,8 +43,8 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 " GBrowse to open github url
 Plug 'tpope/vim-rhubarb'
-Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'christoomey/vim-tmux-navigator'
@@ -63,11 +63,10 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " UI
 Plug 'folke/lsp-colors.nvim'
+Plug 'folke/trouble.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'romainl/Apprentice'
 Plug 'chriskempson/base16-vim'
 " Distraction free writing
 Plug 'junegunn/goyo.vim'

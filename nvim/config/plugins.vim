@@ -10,13 +10,11 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- built-in theme
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 local lspconfig = require'lspconfig'
 
 lspconfig.gopls.setup{}
-
 lspconfig.tsserver.setup({
 	on_attach = lsp_status.on_attach,
 	capabilities = lsp_status.capabilities,
@@ -43,6 +41,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('gitsigns').setup()
+require("trouble").setup {}
 EOF
 
 function! LspStatus() abort
