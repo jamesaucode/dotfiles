@@ -31,19 +31,18 @@ require("lsp-colors").setup({
 lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
 
+require('nvim-autopairs').setup{}
 require'nvim-treesitter.configs'.setup {
   matchup = {
     enable = true,              -- mandatory, false will disable the whole extension
     disable = { "c", "ruby" },  -- optional, list of language that will be disabled
   },
+  autotag = {
+    enable = true,
+  }
 }
 
 require('gitsigns').setup()
-require("trouble").setup {
--- your configuration comes here
--- or leave it empty to use the default settings
--- refer to the configuration section below
-}
 EOF
 
 function! LspStatus() abort
@@ -94,11 +93,8 @@ let g:lightline = {
 			\ }
 
 " Colorscheme stuff
-colorscheme base16-unikitty-light
-let g:deepspace_italics=1
 set termguicolors
-colorscheme base16-unikitty-light
-
+colorscheme base16-atelier-forest-light
 " Make fzf window float with 90vw + 60vh
 let g:fzf_layout = { 'window': { 'width' : 0.9, 'height': 0.6 } }
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting

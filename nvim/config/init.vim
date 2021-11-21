@@ -8,15 +8,15 @@ endif
 call plug#begin('~/.vim/plugged')
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'mcchrish/nnn.vim'
-Plug 'alvan/vim-closetag'
+Plug 'windwp/nvim-ts-autotag'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-compe' " Autocomplete plugin for neovim
 Plug 'glepnir/lspsaga.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "Fuzzy search
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', {
@@ -41,7 +41,9 @@ Plug 'prettier/vim-prettier', {
 Plug 'tpope/vim-commentary' "gcc for commenting code
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+" GBrowse to open github url
 Plug 'tpope/vim-rhubarb'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'machakann/vim-sandwich' "better way to add characters around words
@@ -62,7 +64,6 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " UI
 Plug 'folke/lsp-colors.nvim'
 Plug 'itchyny/lightline.vim'
-" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tyrannicaltoucan/vim-deep-space'
