@@ -38,7 +38,7 @@ Plug 'prettier/vim-prettier', {
 			\ 'ruby',
 			\ 'html',
 			\ 'swift' ] }
-Plug 'tpope/vim-commentary' "gcc for commenting code
+Plug 'numToStr/Comment.nvim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 " GBrowse to open github url
@@ -46,6 +46,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'machakann/vim-sandwich' "better way to add characters around words
 Plug 'christoomey/vim-tmux-navigator'
 "File Browser
@@ -68,6 +69,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'chriskempson/base16-vim'
+" Floating ex-commands input
+Plug 'MunifTanjim/nui.nvim'
+Plug 'VonHeikemen/fine-cmdline.nvim'
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 call plug#end()

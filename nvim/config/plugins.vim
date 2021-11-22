@@ -8,6 +8,13 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
     disable = {},  -- list of language that will be disabled
   },
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
+    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
+  },
+  autotag = {
+    enable = true,
+  }
 }
 
 local lsp_status = require('lsp-status')
@@ -30,18 +37,43 @@ lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
 
 require('nvim-autopairs').setup{}
-require'nvim-treesitter.configs'.setup {
-  matchup = {
-    enable = true,              -- mandatory, false will disable the whole extension
-    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
-  },
-  autotag = {
-    enable = true,
-  }
-}
-
 require('gitsigns').setup()
 require("trouble").setup {}
+require('telescope').load_extension('fzf')
+require('Comment').setup()
+require('fine-cmdline').setup({
+  cmdline = {
+    enable_keymaps = true
+  },
+  popup = {
+    position = {
+      row = '10%',
+      col = '50%',
+    },
+    size = {
+      width = '60%',
+      height = 1
+    },
+    border = {
+      style = 'rounded',
+      highlight = 'FloatBorder',
+    },
+    win_options = {
+      winhighlight = 'Normal:Normal',
+    },
+  },
+  hooks = {
+    before_mount = function(input)
+      -- code
+    end,
+    after_mount = function(input)
+      -- code
+    end,
+    set_keymaps = function(imap, feedkeys)
+      -- code
+    end
+  }
+}) 
 EOF
 
 function! LspStatus() abort
