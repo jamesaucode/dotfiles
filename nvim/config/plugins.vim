@@ -8,15 +8,20 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
     disable = {},  -- list of language that will be disabled
   },
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
+    disable = { "c", "ruby" },  -- optional, list of language that will be disabled
+  },
+  autotag = {
+    enable = true,
+  }
 }
 
--- built-in theme
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 local lspconfig = require'lspconfig'
 
 lspconfig.gopls.setup{}
-
 lspconfig.tsserver.setup({
 	on_attach = lsp_status.on_attach,
 	capabilities = lsp_status.capabilities,
@@ -28,12 +33,47 @@ require("lsp-colors").setup({
   Information = "#0db9d7",
   Hint = "#10B981"
 })
+lspconfig.pyright.setup{}
+lspconfig.rust_analyzer.setup{}
+
 require('nvim-autopairs').setup{}
-require'nvim-treesitter.configs'.setup {
-  autotag = {
-    enable = true,
+require('gitsigns').setup()
+require("trouble").setup {}
+require('telescope').load_extension('fzf')
+require('Comment').setup()
+require('fine-cmdline').setup({
+  cmdline = {
+    enable_keymaps = true
+  },
+  popup = {
+    position = {
+      row = '10%',
+      col = '50%',
+    },
+    size = {
+      width = '60%',
+      height = 1
+    },
+    border = {
+      style = 'rounded',
+      highlight = 'FloatBorder',
+    },
+    win_options = {
+      winhighlight = 'Normal:Normal',
+    },
+  },
+  hooks = {
+    before_mount = function(input)
+      -- code
+    end,
+    after_mount = function(input)
+      -- code
+    end,
+    set_keymaps = function(imap, feedkeys)
+      -- code
+    end
   }
-}
+}) 
 EOF
 
 function! LspStatus() abort
@@ -84,17 +124,8 @@ let g:lightline = {
 			\ }
 
 " Colorscheme stuff
-" set background=dark
-" set termguicolors
-colorscheme base16-unikitty-light
-let g:deepspace_italics=1
-" Unset background color for transparency
-" highlight Normal guibg=none
-" highlight NonText guibg=none
-
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
-
+set termguicolors
+colorscheme base16-atelier-forest-light
 " Make fzf window float with 90vw + 60vh
 let g:fzf_layout = { 'window': { 'width' : 0.9, 'height': 0.6 } }
 let g:fzf_nvim_statusline = 0 " disable statusline overwriting

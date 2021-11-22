@@ -16,6 +16,7 @@ nmap <nowait><Leader>o :Fern . -drawer<CR>
 let g:nnn#set_default_mappings = 0
 nnoremap <nowait><leader>N :NnnPicker<CR>
 nnoremap <nowait><leader>n :NnnPicker %:p:h<CR>
+nnoremap <nowait><leader>t :TroubleToggle<CR>
 
 " Easier window navigation
 nnoremap <C-J> <C-W><C-J>
@@ -25,17 +26,18 @@ nnoremap <C-H> <C-W><C-H>
 
 " LSP UI keybindings
 nmap <F2> :Lspsaga rename<CR>
-" nnoremap <silent>K :Lspsaga hover_doc<CR>
 nnoremap <silent>K :lua vim.lsp.buf.hover()<CR>
-" nnoremap <silent>gd <Cmd>lua vim.lsp.buf.definition()<CR>
-" nnoremap <silent>gD :Lspsaga preview_definition<CR>
 nnoremap <silent>gd :Telescope lsp_implementations<CR>
 nnoremap <silent>gD :Telescope lsp_definitions<CR>
+nnoremap <silent>gh :Lspsaga lsp_finder<CR>
 nnoremap <silent><leader>ca :Telescope lsp_code_actions<CR>
 nnoremap <silent><leader>dd :Telescope lsp_document_diagnostics<CR>
 nnoremap <silent><leader>dD :Telescope lsp_workspace_diagnostics<CR>
 nnoremap <silent><leader>dj :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent><leader>dk :Lspsaga diagnostic_jump_prev<CR>
+
+" Use floating ex-command
+nnoremap : <cmd>lua require('fine-cmdline').open()<CR>
 
 " Fugitive
 nnoremap <silent><leader>gg :Git<CR>
