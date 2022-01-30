@@ -35,6 +35,7 @@ require("lsp-colors").setup({
 })
 lspconfig.pyright.setup{}
 lspconfig.rust_analyzer.setup{}
+lspconfig.volar.setup{}
 
 require('nvim-autopairs').setup{}
 require('gitsigns').setup()
