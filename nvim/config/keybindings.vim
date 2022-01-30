@@ -36,9 +36,6 @@ nnoremap <silent><leader>dD :Telescope lsp_workspace_diagnostics<CR>
 nnoremap <silent><leader>dj :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent><leader>dk :Lspsaga diagnostic_jump_prev<CR>
 
-" Use floating ex-command
-nnoremap : <cmd>lua require('fine-cmdline').open()<CR>
-
 " Fugitive
 nnoremap <silent><leader>gg :Git<CR>
 

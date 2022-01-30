@@ -41,39 +41,6 @@ require('gitsigns').setup()
 require("trouble").setup {}
 require('telescope').load_extension('fzf')
 require('Comment').setup()
-require('fine-cmdline').setup({
-  cmdline = {
-    enable_keymaps = true
-  },
-  popup = {
-    position = {
-      row = '10%',
-      col = '50%',
-    },
-    size = {
-      width = '60%',
-      height = 1
-    },
-    border = {
-      style = 'rounded',
-      highlight = 'FloatBorder',
-    },
-    win_options = {
-      winhighlight = 'Normal:Normal',
-    },
-  },
-  hooks = {
-    before_mount = function(input)
-      -- code
-    end,
-    after_mount = function(input)
-      -- code
-    end,
-    set_keymaps = function(imap, feedkeys)
-      -- code
-    end
-  }
-}) 
 EOF
 
 function! LspStatus() abort

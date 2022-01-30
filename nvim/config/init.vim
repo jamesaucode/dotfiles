@@ -69,9 +69,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'chriskempson/base16-vim'
-" Floating ex-commands input
-Plug 'MunifTanjim/nui.nvim'
-Plug 'VonHeikemen/fine-cmdline.nvim'
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 call plug#end()
