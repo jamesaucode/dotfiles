@@ -51,7 +51,6 @@ Plug 'folke/trouble.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'chriskempson/base16-vim'
 " Term
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}

@@ -48,12 +48,6 @@ require('gitsigns').setup()
 require("trouble").setup {}
 require('telescope').load_extension('fzf')
 require('Comment').setup()
-require("bufferline").setup{
-	options = {
-		mode = "buffers",
-		color_icons = true,
-	}
-}
 require("toggleterm").setup{
 	open_mapping = [[<leader>t]],
 	shade_terminals = true,
