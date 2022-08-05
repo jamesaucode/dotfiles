@@ -20,25 +20,13 @@ require'nvim-treesitter.configs'.setup {
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 local lspconfig = require'lspconfig'
-
-lspconfig.gopls.setup{}
-lspconfig.tsserver.setup({
-	on_attach = lsp_status.on_attach,
-	capabilities = lsp_status.capabilities,
-	filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" }
-})
 require("lsp-colors").setup({
   Error = "#db4b4b",
   Warning = "#e0af68",
   Information = "#0db9d7",
   Hint = "#10B981"
 })
-lspconfig.pyright.setup{}
-lspconfig.rust_analyzer.setup{}
-lspconfig.html.setup{}
-
 local lsp_installer = require("nvim-lsp-installer")
-
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
 -- or if the server is already installed).
 lsp_installer.on_server_ready(function(server)
