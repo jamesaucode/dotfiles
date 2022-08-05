@@ -2,15 +2,14 @@ nnoremap  <Leader>n: bn<CR>
 nnoremap  <Leader>p: bp<CR>
 nnoremap  <Leader>d: bd<CR>
 " Fuzzy find keybindings
-nmap <nowait><Leader>b :Buffers<CR>
-nmap <Leader>f :GFiles<CR>
-nmap <Leader>F :Files<CR>
-nmap <Leader>h :History<CR>
-nmap <Leader>l :BLines<CR>
-nmap <Leader>L :Lines<CR>
-nmap <Leader>' :Marks<CR>
-nmap <Leader>C :Commands<CR>
-nmap <Leader>R :Rg<CR>
+nmap <Leader>b :FzfLua buffers<CR>
+nmap <Leader>f :FzfLua git_files<CR>
+nmap <Leader>F :FzfLua files<CR>
+nmap <Leader>h :FzfLua oldfiles<CR>
+nmap <Leader>L :FzfLua lines<CR>
+nmap <Leader>l :FzfLua blines<CR>
+nmap <Leader>R :FzfLua live_grep<CR>
+
 nmap <nowait><Leader>o :Fern . -drawer<CR>
 
 let g:nnn#set_default_mappings = 0

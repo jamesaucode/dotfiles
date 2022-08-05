@@ -18,7 +18,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim' "Fuzzy search
+" improved Fzf plugin written in lua
+Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 Plug 'mattn/emmet-vim'
 " Auto Formatting
 Plug 'sbdchd/neoformat'
