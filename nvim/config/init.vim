@@ -24,7 +24,7 @@ Plug 'mattn/emmet-vim'
 " Auto Formatting
 Plug 'sbdchd/neoformat'
 Plug 'numToStr/Comment.nvim'
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 " GBrowse to open github url
 Plug 'tpope/vim-rhubarb'
