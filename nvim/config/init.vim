@@ -22,7 +22,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 Plug 'mattn/emmet-vim'
 " Auto Formatting
-Plug 'sbdchd/neoformat'
+Plug 'mhartington/formatter.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'tpope/vim-fugitive'

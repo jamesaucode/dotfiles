@@ -46,6 +46,22 @@ lsp_installer.on_server_ready(function(server)
     server:setup(opts)
 end)
 
+require('formatter').setup{
+	filetype = {
+		typescriptreact = {
+			require('formatter.filetypes.typescriptreact').prettierd,
+		},
+		javascriptreact = {
+			require('formatter.filetypes.typescriptreact').prettierd,
+		},
+		typescript = {
+			require('formatter.filetypes.typescriptreact').prettierd,
+		},
+		javascript = {
+			require('formatter.filetypes.typescriptreact').prettierd,
+		},
+	}
+}
 require('nvim-autopairs').setup{}
 require('gitsigns').setup()
 require("trouble").setup {}
@@ -85,15 +101,11 @@ function! LspStatus() abort
     return ''
 endfunction
 
-" Neoformat settings,
-" prefer local copy of prettier
-let g:neoformat_try_node_exe = 1
-
-" Auto do neoformat on save
-augroup fmt
-	autocmd!
-	autocmd BufWritePre * undojoin | Neoformat
-augroup
+" Auto do formatting on save
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
 
 " Floating window (neovim latest and vim with patch 8.2.191)
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
