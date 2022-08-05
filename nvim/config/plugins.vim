@@ -4,6 +4,9 @@ saga.init_lsp_saga()
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
   ignore_install = {}, -- List of parsers to ignore installing
+	context_commentstring = {
+    enable = true
+  },
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = {},  -- list of language that will be disabled
@@ -47,7 +50,23 @@ require('nvim-autopairs').setup{}
 require('gitsigns').setup()
 require("trouble").setup {}
 require('telescope').load_extension('fzf')
-require('Comment').setup()
+require('Comment').setup{
+	pre_hook = function(ctx)
+    local U = require 'Comment.utils'
+
+    local location = nil
+    if ctx.ctype == U.ctype.block then
+      location = require('ts_context_commentstring.utils').get_cursor_location()
+    elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+      location = require('ts_context_commentstring.utils').get_visual_start_location()
+    end
+
+    return require('ts_context_commentstring.internal').calculate_commentstring {
+      key = ctx.ctype == U.ctype.line and '__default' or '__multiline',
+      location = location,
+    }
+  end,
+}
 require("toggleterm").setup{
 	open_mapping = [[<leader>t]],
 	shade_terminals = true,
