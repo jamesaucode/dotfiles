@@ -45,8 +45,6 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 " TS
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-" Generates Code doc
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " UI
 Plug 'folke/lsp-colors.nvim'
 Plug 'folke/trouble.nvim'
