@@ -26,12 +26,12 @@ nnoremap <C-H> <C-W><C-H>
 " LSP UI keybindings
 nmap <F2> :Lspsaga rename<CR>
 nnoremap <silent>K :lua vim.lsp.buf.hover()<CR>
-nnoremap <silent>gd :Telescope lsp_implementations<CR>
-nnoremap <silent>gD :Telescope lsp_definitions<CR>
+nnoremap <silent>gd :FzfLua lsp_implementations<CR>
+nnoremap <silent>gD :FzfLua lsp_definitions<CR>
 nnoremap <silent>gh :Lspsaga lsp_finder<CR>
-nnoremap <silent><leader>ca :Telescope lsp_code_actions<CR>
-nnoremap <silent><leader>dd :Telescope lsp_document_diagnostics<CR>
-nnoremap <silent><leader>dD :Telescope lsp_workspace_diagnostics<CR>
+nnoremap <silent><leader>ca :FzfLua lsp_code_actions<CR>
+nnoremap <silent><leader>dd :FzfLua lsp_document_diagnostics<CR>
+nnoremap <silent><leader>dD :FzfLua lsp_workspace_diagnostics<CR>
 nnoremap <silent><leader>dj :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent><leader>dk :Lspsaga diagnostic_jump_prev<CR>
 
