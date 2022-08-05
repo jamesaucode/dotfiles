@@ -20,25 +20,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' "Fuzzy search
 Plug 'mattn/emmet-vim'
-Plug 'prettier/vim-prettier', {
-			\ 'do': 'yarn install',
-			\ 'branch': 'release/1.x',
-			\ 'for': [
-			\ 'javascript',
-			\ 'typescript',
-			\ 'css',
-			\ 'less',
-			\ 'scss',
-			\ 'json',
-			\ 'graphql',
-			\ 'markdown',
-			\ 'vue',
-			\ 'lua',
-			\ 'php',
-			\ 'python',
-			\ 'ruby',
-			\ 'html',
-			\ 'swift' ] }
+" Auto Formatting
+Plug 'sbdchd/neoformat'
 Plug 'numToStr/Comment.nvim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
@@ -69,7 +52,10 @@ Plug 'folke/trouble.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'chriskempson/base16-vim'
+" Term
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 call plug#end()

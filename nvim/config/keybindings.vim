@@ -16,7 +16,7 @@ nmap <nowait><Leader>o :Fern . -drawer<CR>
 let g:nnn#set_default_mappings = 0
 nnoremap <nowait><leader>N :NnnPicker<CR>
 nnoremap <nowait><leader>n :NnnPicker %:p:h<CR>
-nnoremap <nowait><leader>t :TroubleToggle<CR>
+" nnoremap <nowait><leader>t :TroubleToggle<CR>
 
 " Easier window navigation
 nnoremap <C-J> <C-W><C-J>

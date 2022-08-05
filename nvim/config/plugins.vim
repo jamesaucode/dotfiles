@@ -2,7 +2,7 @@ lua << EOF
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all",
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
@@ -60,6 +60,20 @@ require('gitsigns').setup()
 require("trouble").setup {}
 require('telescope').load_extension('fzf')
 require('Comment').setup()
+require("bufferline").setup{
+	options = {
+		mode = "buffers",
+		color_icons = true,
+	}
+}
+require("toggleterm").setup{
+	open_mapping = [[<leader>t]],
+	shade_terminals = true,
+	insert_mappings = false,
+	terminal_mappings = false,
+	direction = 'float',
+	close_on_exit = true,
+}
 EOF
 
 function! LspStatus() abort
@@ -69,6 +83,16 @@ function! LspStatus() abort
 
     return ''
 endfunction
+
+" Neoformat settings,
+" prefer local copy of prettier
+let g:neoformat_try_node_exe = 1
+
+" Auto do neoformat on save
+augroup fmt
+	autocmd!
+	autocmd BufWritePre * undojoin | Neoformat
+augroup
 
 " Floating window (neovim latest and vim with patch 8.2.191)
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
