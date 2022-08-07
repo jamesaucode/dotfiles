@@ -14,8 +14,9 @@ Plug 'windwp/nvim-autopairs'
 Plug 'kshenoy/vim-signature' "Shows where the marks are
 Plug 'hrsh7th/nvim-compe' " Autocomplete plugin for neovim
 Plug 'tami5/lspsaga.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'williamboman/mason.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " improved Fzf plugin written in lua
